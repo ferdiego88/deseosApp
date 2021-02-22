@@ -1,0 +1,7 @@
+<ion-list color="dark">
+    <ion-item (click)="listaSeleccionada(item)" color="dark" *ngFor="let item of lista" detail>
+        <ion-label> {{item.titulo}} </ion-label>
+        <ion-note slot="end" color="tertiary"> {{item.items.length}} </ion-note>
+    </ion-item>
+
+</ion-list>
