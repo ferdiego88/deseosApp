@@ -11,6 +11,7 @@ import { IonicModule } from '@ionic/angular';
   ],
   imports: [
     CommonModule,
+    // Importamos el Ionic module
     IonicModule
   ], exports: [
     ListasComponent
