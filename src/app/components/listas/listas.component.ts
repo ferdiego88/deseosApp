@@ -9,12 +9,10 @@ import { DeseosService } from 'src/app/providers/deseos.service';
   styleUrls: ['./listas.component.scss'],
 })
 export class ListasComponent   {
-  lista: Lista[] = [];
   @Input() terminada = true;
-  constructor(private deseosService: DeseosService,
+  constructor(public deseosService: DeseosService,
               private router: Router)
   {
-    this.lista = this.deseosService.getLista();
   }
 
   listaSeleccionada(lista: Lista){
@@ -24,6 +22,10 @@ export class ListasComponent   {
     } else {
       this.router.navigate(['/tabs/tab1/agregar', lista.id]);
     }
+  }
+
+  borrarLista(lista: Lista){
+    this.deseosService.borrarLista(lista);
   }
 
 }
